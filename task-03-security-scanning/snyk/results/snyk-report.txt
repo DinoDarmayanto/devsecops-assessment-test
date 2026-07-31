@@ -1,0 +1,133 @@
+
+Testing /home/johan-chaster/Dokumen/devsecops-assessment-test/task-03-security-scanning/WebGoat...
+
+Tested 194 dependencies for known issues, found 48 issues, 48 vulnerable paths.
+
+
+Issues to fix by upgrading:
+
+  Upgrade com.fasterxml.jackson.core:jackson-databind@2.21.4 to com.fasterxml.jackson.core:jackson-databind@2.21.5 to fix
+  ✗ Improperly Controlled Modification of Dynamically-Determined Object Attributes [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-17457695] in com.fasterxml.jackson.core:jackson-databind@2.21.4
+    introduced by com.fasterxml.jackson.core:jackson-databind@2.21.4
+  ✗ Incorrect Authorization (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-18170132] in com.fasterxml.jackson.core:jackson-databind@2.21.4
+    introduced by com.fasterxml.jackson.core:jackson-databind@2.21.4
+  ✗ Incorrect Authorization (new) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-17972608] in com.fasterxml.jackson.core:jackson-databind@2.21.4
+    introduced by com.fasterxml.jackson.core:jackson-databind@2.21.4
+
+  Upgrade com.thoughtworks.xstream:xstream@1.4.5 to com.thoughtworks.xstream:xstream@1.4.21 to fix
+  ✗ Denial of Service (DoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-3091180] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Denial of Service (DoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-3182897] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Denial of Service (DoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569189] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1294540] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088328] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088329] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088330] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088331] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088332] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088333] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088334] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088335] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088336] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088338] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary File Deletion [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1051966] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Server-Side Request Forgery (SSRF) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1051967] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Insecure XML deserialization [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-460764] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-8352924] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-2388977] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary Code Execution [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569176] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary Code Execution [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569177] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary Code Execution [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569178] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary Code Execution [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569179] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary Code Execution [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569180] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary Code Execution [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569181] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary Code Execution [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569182] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Remote Code Execution (RCE) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569183] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary Code Execution [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569185] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary Code Execution [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569186] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Arbitrary Code Execution [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569187] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569190] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Server-Side Request Forgery (SSRF) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1569191] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1088337] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Deserialization of Untrusted Data [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-1040458] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-31394] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+  ✗ XML External Entity (XXE) Injection [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-30385] in com.thoughtworks.xstream:xstream@1.4.5
+    introduced by com.thoughtworks.xstream:xstream@1.4.5
+
+  Upgrade org.apache.commons:commons-lang3@3.14.0 to org.apache.commons:commons-lang3@3.18.0 to fix
+  ✗ Uncontrolled Recursion [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHECOMMONS-10734078] in org.apache.commons:commons-lang3@3.14.0
+    introduced by org.apache.commons:commons-lang3@3.14.0
+
+  Upgrade org.flywaydb:flyway-core@12.4.0 to org.flywaydb:flyway-core@13.0.0 to fix
+  ✗ Incorrect Authorization (new) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-17972609] in tools.jackson.core:jackson-databind@3.1.4
+    introduced by org.flywaydb:flyway-core@12.4.0 > tools.jackson.core:jackson-databind@3.1.4
+
+
+Issues with no direct upgrade or patch:
+  ✗ Expression Injection [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-17675439] in ch.qos.logback:logback-core@1.5.34
+    introduced by org.springframework.boot:spring-boot-starter-validation@4.1.0 > org.springframework.boot:spring-boot-starter@4.1.0 > org.springframework.boot:spring-boot-starter-logging@4.1.0 > ch.qos.logback:logback-classic@1.5.34 > ch.qos.logback:logback-core@1.5.34
+  This issue was fixed in versions: 1.5.36
+  ✗ Improper Encoding or Escaping of Output [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHELOGGINGLOG4J-17954276] in org.apache.logging.log4j:log4j-api@2.25.4
+    introduced by org.springframework.boot:spring-boot-starter-validation@4.1.0 > org.springframework.boot:spring-boot-starter@4.1.0 > org.springframework.boot:spring-boot-starter-logging@4.1.0 > org.apache.logging.log4j:log4j-to-slf4j@2.25.4 > org.apache.logging.log4j:log4j-api@2.25.4
+  No upgrade or patch available
+  ✗ Improper Authentication [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-17732890] in org.apache.tomcat.embed:tomcat-embed-core@11.0.22
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.0 > org.springframework.boot:spring-boot-starter-tomcat@4.1.0 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.0 > org.apache.tomcat.embed:tomcat-embed-core@11.0.22
+  This issue was fixed in versions: 9.0.119, 10.1.56, 11.0.23
+  ✗ Detection of Error Condition Without Action [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-17733746] in org.apache.tomcat.embed:tomcat-embed-core@11.0.22
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.0 > org.springframework.boot:spring-boot-starter-tomcat@4.1.0 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.0 > org.apache.tomcat.embed:tomcat-embed-core@11.0.22
+  This issue was fixed in versions: 9.0.119, 10.1.56, 11.0.23
+  ✗ Improper Authorization [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-17733895] in org.apache.tomcat.embed:tomcat-embed-core@11.0.22
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.0 > org.springframework.boot:spring-boot-starter-tomcat@4.1.0 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.0 > org.apache.tomcat.embed:tomcat-embed-core@11.0.22
+  This issue was fixed in versions: 9.0.119, 10.1.56, 11.0.23
+  ✗ Always-Incorrect Control Flow Implementation [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-17734715] in org.apache.tomcat.embed:tomcat-embed-core@11.0.22
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.0 > org.springframework.boot:spring-boot-starter-tomcat@4.1.0 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.0 > org.apache.tomcat.embed:tomcat-embed-core@11.0.22
+  This issue was fixed in versions: 9.0.119, 10.1.56, 11.0.23
+  ✗ Always-Incorrect Control Flow Implementation [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-17734718] in org.apache.tomcat.embed:tomcat-embed-core@11.0.22
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.0 > org.springframework.boot:spring-boot-starter-tomcat@4.1.0 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.0 > org.apache.tomcat.embed:tomcat-embed-core@11.0.22
+  This issue was fixed in versions: 9.0.119, 10.1.56, 11.0.23
+
+
+
+Organization:      dinodarmayanto22
+Package manager:   maven
+Target file:       pom.xml
+Project name:      org.owasp.webgoat:webgoat
+Open source:       no
+Project path:      /home/johan-chaster/Dokumen/devsecops-assessment-test/task-03-security-scanning/WebGoat
+Licenses:          enabled
+
+
