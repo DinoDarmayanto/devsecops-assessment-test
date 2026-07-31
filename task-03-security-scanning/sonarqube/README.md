@@ -225,31 +225,31 @@ Setelah scanning berhasil, SonarQube menampilkan beberapa informasi seperti:
 
 ---
 
-# 8. Screenshots
+# 8. outputs
 
 ## Dashboard
 
-![](screenshots/01-dashboard.png)
+![](outputs/01-dashboard.png)
 
 ## Project Overview
 
-![](screenshots/02-project-overview.png)
+![](outputs/02-project-overview.png)
 
 ## Issues
 
-![](screenshots/03-issues.png)
+![](outputs/03-issues.png)
 
 ## Security Hotspots
 
-![](screenshots/04-security-hotspots.png)
+![](outputs/04-security-hotspots.png)
 
 ## Code
 
-![](screenshots/05-code.png)
+![](outputs/05-code.png)
 
 ## Activity
 
-![](screenshots/06-activity.png)
+![](outputs/06-activity.png)
 
 ---
 

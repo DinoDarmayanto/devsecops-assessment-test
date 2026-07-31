@@ -111,15 +111,15 @@ snyk test
 Menyimpan output ke file text:
 
 ```bash
-mkdir -p ../snyk/results
+mkdir -p ../snyk/outputs
 
-snyk test | tee ../snyk/results/snyk-report.txt
+snyk test | tee ../snyk/outputs/snyk-report.txt
 ```
 
 Menyimpan output dalam format JSON:
 
 ```bash
-snyk test --json > ../snyk/results/snyk-report.json
+snyk test --json > ../snyk/outputs/snyk-report.json
 ```
 
 ---
@@ -132,7 +132,7 @@ Hasil scanning berhasil disimpan pada folder berikut.
 task-03-security-scanning/
 └── snyk/
     ├── README.md
-    └── results
+    └── outputs
         ├── snyk-report.txt
         └── snyk-report.json
 ```
@@ -146,7 +146,7 @@ Output yang dihasilkan terdiri dari dua format.
 ### Text Report
 
 ```
-results/snyk-report.txt
+outputs/snyk-report.txt
 ```
 
 Berisi hasil scanning yang dapat dibaca langsung melalui terminal maupun text editor.
@@ -154,7 +154,7 @@ Berisi hasil scanning yang dapat dibaca langsung melalui terminal maupun text ed
 ### JSON Report
 
 ```
-results/snyk-report.json
+outputs/snyk-report.json
 ```
 
 Berisi hasil scanning dalam format JSON sehingga dapat digunakan untuk proses analisis maupun integrasi dengan tools lain.
@@ -169,8 +169,8 @@ Snyk melakukan pemeriksaan terhadap dependency project dan membandingkannya deng
 
 Detail hasil scanning tersimpan pada:
 
-- `results/snyk-report.txt`
-- `results/snyk-report.json`
+- `outputs/snyk-report.txt`
+- `outputs/snyk-report.json`
 
 ---
 

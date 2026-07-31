@@ -81,7 +81,7 @@ task-03-security-scanning/
 ├── WebGoat/
 ├── sonarqube/
 │   ├── README.md
-│   └── screenshots/
+│   └── outputs/
 ├── snyk/
 │   ├── README.md
 │   └── results/

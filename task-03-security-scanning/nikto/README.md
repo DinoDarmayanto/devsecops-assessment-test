@@ -76,11 +76,11 @@ nikto -h http://localhost:8080
 Menyimpan hasil scanning ke file:
 
 ```bash
-mkdir -p results
+mkdir -p outputs
 
 nikto \
 -h http://localhost:8080 \
--o results/nikto-report.txt
+-o outputs/nikto-report.txt
 ```
 
 ---
@@ -93,7 +93,7 @@ Hasil scanning disimpan pada:
 task-03-security-scanning/
 └── nikto/
     ├── README.md
-    └── results/
+    └── outputs/
         └── nikto-report.txt
 ```
 
@@ -106,7 +106,7 @@ Scanning berhasil dijalankan terhadap aplikasi WebGoat dan menghasilkan laporan 
 Lokasi laporan:
 
 ```
-results/nikto-report.txt
+outputs/nikto-report.txt
 ```
 
 Laporan tersebut berisi informasi hasil scanning yang dihasilkan oleh Nikto terhadap target aplikasi.
@@ -120,7 +120,7 @@ Nikto berhasil digunakan sebagai **Dynamic Application Security Testing (DAST)**
 Output hasil scanning berhasil disimpan dalam file:
 
 ```
-results/nikto-report.txt
+outputs/nikto-report.txt
 ```
 
 Hasil tersebut akan digunakan sebagai dasar analisis security findings pada tahap berikutnya.
