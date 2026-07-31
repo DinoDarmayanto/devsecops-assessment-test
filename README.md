@@ -348,7 +348,7 @@ Berisi:
 | Snyk | ✅ |
 | Nikto | ✅ |
 | Kubernetes | ✅ |
-| Documentation | 🚧 |
+| Documentation | ✅ |
 
 ---
 
