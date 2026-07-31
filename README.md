@@ -134,12 +134,10 @@ devsecops-assessment-test/
 │       └── minikube-service-url.txt
 │
 └── task-05-documentation/
-    ├── outputs/
-    │   └── .gitkeep
     ├── presentation/
+    │   ├── DevSecOps_Assessment_Report_From_README.pdf
     │   └── .gitkeep
-    └── report/
-        └── .gitkeep
+    └── 
 ```
 ---
 
