@@ -74,28 +74,73 @@ Seluruh dokumentasi, konfigurasi, manifest, output command, dan hasil scanning d
 
 ---
 
-# Repository Structure
+## Folder Structure
 
 ```text
 devsecops-assessment-test/
 ├── Task Challenge - DevSecOps Engineer.pdf
 ├── README.md
-├── task-01-devsecops
-├── task-02-git
-├── task-03-security-scanning
-│   ├── WebGoat
-│   ├── sonarqube
-│   ├── snyk
-│   └── nikto
-├── task-04-kubernetes
-│   ├── manifests
-│   └── outputs
-└── task-05-documentation
-    ├── report
-    ├── presentation
-    └── outputs
+│
+├── task-01-devsecops/
+│   ├── README.md
+│   └── .gitkeep
+│
+├── task-02-git/
+│   ├── README.md
+│   ├── dev.html
+│   └── .gitkeep
+│
+├── task-03-security-scanning/
+│   ├── README.md
+│   ├── WebGoat/
+│   │
+│   ├── sonarqube/
+│   │   ├── README.md
+│   │   ├── .gitkeep
+│   │   └── outputs/
+│   │       ├── 01-dashboard.png
+│   │       ├── 02-project-overview.png
+│   │       ├── 03-issues.png
+│   │       ├── 04-security-hotspots.png
+│   │       ├── 05-code.png
+│   │       └── 06-activity.png
+│   │
+│   ├── snyk/
+│   │   ├── README.md
+│   │   ├── .gitkeep
+│   │   └── outputs/
+│   │       ├── snyk-report.json
+│   │       └── snyk-report.txt
+│   │
+│   └── nikto/
+│       ├── README.md
+│       ├── .gitkeep
+│       └── outputs/
+│           └── nikto-report.txt
+│
+├── task-04-kubernetes/
+│   ├── README.md
+│   ├── manifests/
+│   │   ├── .gitkeep
+│   │   ├── apache-deployment.yaml
+│   │   └── apache-service.yaml
+│   │
+│   └── outputs/
+│       ├── apache-homepage.html
+│       ├── kubectl-get-deployments.txt
+│       ├── kubectl-get-nodes.txt
+│       ├── kubectl-get-pods.txt
+│       ├── kubectl-get-services.txt
+│       └── minikube-service-url.txt
+│
+└── task-05-documentation/
+    ├── outputs/
+    │   └── .gitkeep
+    ├── presentation/
+    │   └── .gitkeep
+    └── report/
+        └── .gitkeep
 ```
-
 ---
 
 # Task Summary
