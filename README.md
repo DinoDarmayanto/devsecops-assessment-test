@@ -70,7 +70,7 @@ Seluruh dokumentasi, konfigurasi, manifest, output command, dan hasil scanning d
 | Task 02 | Git Workflow | ✅ Completed |
 | Task 03 | Security Scanning | ✅ Completed |
 | Task 04 | Kubernetes Deployment | ✅ Completed |
-| Task 05 | Documentation | 🚧 In Progress |
+| Task 05 | Documentation | ✅ Completed |
 
 ---
 
