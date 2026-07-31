@@ -1,0 +1,2 @@
+NAME       STATUS   ROLES           AGE     VERSION
+minikube   Ready    control-plane   8m41s   v1.35.1
