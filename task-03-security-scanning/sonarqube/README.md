@@ -2,56 +2,52 @@
 
 ## 1. Overview
 
-SonarQube is a Static Application Security Testing (SAST) platform used to analyze source code without executing the application.
+SonarQube merupakan **Static Application Security Testing (SAST)** platform yang digunakan untuk melakukan analisis terhadap source code **tanpa menjalankan aplikasi**. Pada assessment ini, SonarQube dijalankan menggunakan Docker, sedangkan proses scanning dilakukan menggunakan **SonarScanner Docker Image**.
 
-This lab uses:
-
-- SonarQube Community Edition (Docker)
-- SonarScanner CLI (Docker)
-- OWASP WebGoat as the vulnerable target application
+Target aplikasi yang digunakan adalah **OWASP WebGoat**, yaitu aplikasi vulnerable yang memang dibuat untuk kebutuhan security learning dan penetration testing.
 
 ---
 
-## 2. Objective
+# 2. Objective
 
-The objectives of this lab are:
+Tujuan dari task ini adalah:
 
-- Deploy SonarQube using Docker
+- Deploy SonarQube menggunakan Docker
 - Create a SonarQube Project
-- Generate an authentication token
-- Analyze OWASP WebGoat source code
-- Review security findings
-- Understand SAST workflow
+- Generate Authentication Token
+- Scan OWASP WebGoat Source Code
+- Analyze security findings
+- Memahami proses Static Application Security Testing (SAST)
 
 ---
 
-## 3. Architecture
+# 3. Deployment Architecture
 
 ```text
-                  +----------------------------+
-                  |      Developer Machine     |
-                  +-------------+--------------+
-                                |
-                                |
-                                v
-                  +----------------------------+
-                  |      OWASP WebGoat         |
-                  |      Source Code           |
-                  +-------------+--------------+
-                                |
-                                |
-                     SonarScanner CLI (Docker)
-                                |
-                                |
-                                v
-                  +----------------------------+
-                  |        SonarQube           |
-                  |      Docker Container      |
-                  +-------------+--------------+
-                                |
-                                |
-                                v
-                     Security Analysis Report
+                +------------------------------+
+                |      Developer Machine       |
+                +--------------+---------------+
+                               |
+                               |
+                               v
+                +------------------------------+
+                |     OWASP WebGoat Source     |
+                |           Code               |
+                +--------------+---------------+
+                               |
+                               |
+                   SonarScanner (Docker)
+                               |
+                               |
+                               v
+                +------------------------------+
+                |      SonarQube Server        |
+                |      Docker Container        |
+                +--------------+---------------+
+                               |
+                               |
+                               v
+                    Security Analysis Report
 ```
 
 ---
@@ -60,18 +56,20 @@ The objectives of this lab are:
 
 | Component | Version |
 |-----------|---------|
+| OS | Ubuntu 24.04 |
 | Docker | 27.4.1 |
 | Java | 25 |
 | Maven | 3.8.7 |
 | SonarQube | LTS Community |
 | SonarScanner | Docker Latest |
-| OS | Ubuntu 24.04 |
 
 ---
 
 # 5. Deployment Steps
 
-### Start SonarQube
+## 5.1 Start SonarQube Container
+
+Jalankan container SonarQube menggunakan Docker.
 
 ```bash
 docker run -d \
@@ -80,109 +78,68 @@ docker run -d \
   sonarqube:lts-community
 ```
 
----
-
-### Verify Container
+Verifikasi container:
 
 ```bash
 docker ps
 ```
 
-Expected output:
-
-```text
-sonarqube:lts-community
-STATUS Up
-PORT 9000
-```
+Pastikan status container **Running**.
 
 ---
 
-### Access SonarQube
+## 5.2 Access SonarQube
 
-Open browser
+Buka browser:
 
 ```
 http://localhost:9000
 ```
 
-Default credential
+Default credential:
 
 ```
-admin
-admin
+Username : admin
+Password : admin
 ```
+
+Pada login pertama, ubah password administrator.
 
 ---
 
-### Change Password
+## 5.3 Create Project
 
-After first login
+Buat project baru dengan konfigurasi:
 
-- Change default password
-- Login again
+```
+Project Name : devsecops-assessment
+Project Key  : devsecops-assessment
+Main Branch  : master
+```
+
+Kemudian generate **User Token** yang akan digunakan oleh SonarScanner.
 
 ---
 
-### Create New Project
+## 5.4 Build WebGoat
 
-Project Name
-
-```
-devsecops-assessment
-```
-
-Project Key
-
-```
-devsecops-assessment
-```
-
-Main Branch
-
-```
-master
-```
-
----
-
-### Generate User Token
-
-Administration
-
-↓
-
-Security
-
-↓
-
-Generate Token
-
-Example
-
-```
-sqp_xxxxxxxxxxxxxxxxxxxxx
-```
-
----
-
-# 6. Build Project
-
-Compile WebGoat
+Sebelum melakukan scanning, project harus berhasil di-compile agar folder `target/classes` tersedia.
 
 ```bash
 mvn clean compile
 ```
 
-Verify
+Verifikasi hasil compile:
 
 ```bash
-target/classes
+ls target/classes
 ```
 
 ---
 
-# 7. Run SonarScanner
+## 5.5 Run SonarScanner
+
+Karena SonarScanner CLI tidak di-install secara lokal, proses scanning dilakukan menggunakan Docker.
 
 ```bash
 docker run --rm \
@@ -197,69 +154,65 @@ docker run --rm \
   -Dsonar.java.binaries=target/classes
 ```
 
----
-
-# 8. Troubleshooting
-
-## Problem 1
-
-403 Forbidden while downloading SonarScanner
-
-Cause
-
-Official download URL is unavailable.
-
-Solution
-
-Use Docker image
-
-```
-sonarsource/sonar-scanner-cli
-```
+Setelah proses selesai, hasil analisis dapat dilihat melalui Dashboard SonarQube.
 
 ---
 
-## Problem 2
+# 6. Troubleshooting
+
+### Case 1 - HTTP 403 Forbidden
+
+Saat mencoba download SonarScanner CLI secara manual, muncul error:
 
 ```
-No files nor directories matching target/classes
+403 Forbidden
 ```
 
-Cause
+**Solution**
 
-Project has not been compiled.
-
-Solution
-
-```
-mvn clean compile
-```
+Menggunakan image Docker `sonarsource/sonar-scanner-cli` sehingga tidak perlu download binary secara manual.
 
 ---
 
-## Problem 3
+### Case 2 - Java Version Not Supported
 
 ```
 release version 25 not supported
 ```
 
-Cause
+**Cause**
 
-WebGoat requires Java 25.
+Versi Java pada local machine masih menggunakan Java 17, sedangkan WebGoat membutuhkan Java 25.
 
-Solution
+**Solution**
 
-Upgrade JDK
+Upgrade JDK menjadi Java 25.
+
+---
+
+### Case 3 - target/classes Not Found
 
 ```
-Java 25
+No files nor directories matching target/classes
+```
+
+**Cause**
+
+Project belum berhasil di-build.
+
+**Solution**
+
+Compile project terlebih dahulu menggunakan:
+
+```bash
+mvn clean compile
 ```
 
 ---
 
-# 9. Scan Result
+# 7. Scan Result
 
-After successful analysis SonarQube displays
+Setelah scanning berhasil, SonarQube menampilkan beberapa informasi seperti:
 
 - Bugs
 - Vulnerabilities
@@ -268,41 +221,31 @@ After successful analysis SonarQube displays
 - Security Rating
 - Reliability Rating
 - Maintainability Rating
-- Quality Gate
+- Quality Gate Status
 
 ---
 
-# 10. Screenshots
+# 8. Screenshots
 
 ## Dashboard
 
 ![](screenshots/01-dashboard.png)
 
----
-
 ## Project Overview
 
 ![](screenshots/02-project-overview.png)
-
----
 
 ## Issues
 
 ![](screenshots/03-issues.png)
 
----
-
 ## Security Hotspots
 
 ![](screenshots/04-security-hotspots.png)
 
----
-
 ## Code
 
 ![](screenshots/05-code.png)
-
----
 
 ## Activity
 
@@ -310,8 +253,8 @@ After successful analysis SonarQube displays
 
 ---
 
-# 11. Conclusion
+# 9. Conclusion
 
-The SonarQube analysis successfully scanned the OWASP WebGoat project using Docker-based SonarScanner.
+Pada task ini berhasil dilakukan deployment SonarQube menggunakan Docker dan proses scanning terhadap **OWASP WebGoat** menggunakan **SonarScanner Docker Image**.
 
-The analysis provides comprehensive code quality and security metrics, including bugs, vulnerabilities, code smells, security hotspots, and Quality Gate status. These findings help developers improve code quality and detect security issues early in the Software Development Lifecycle (SDLC).
+Hasil analisis menunjukkan berbagai metrik kualitas kode seperti **Bugs, Vulnerabilities, Code Smells, Security Hotspots**, serta **Quality Gate**. Dengan pendekatan ini, proses SAST dapat dilakukan secara otomatis sebagai bagian dari pipeline DevSecOps sehingga potensi security issue dapat ditemukan lebih awal sebelum aplikasi di-deploy ke production environment.

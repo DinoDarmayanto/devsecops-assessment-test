@@ -1,260 +1,184 @@
-# SonarQube (SAST)
+# Task 02 - Git Version Control
 
-## 1. Overview
+## Objective
 
-SonarQube merupakan **Static Application Security Testing (SAST)** platform yang digunakan untuk melakukan analisis terhadap source code **tanpa menjalankan aplikasi**. Pada assessment ini, SonarQube dijalankan menggunakan Docker, sedangkan proses scanning dilakukan menggunakan **SonarScanner Docker Image**.
-
-Target aplikasi yang digunakan adalah **OWASP WebGoat**, yaitu aplikasi vulnerable yang memang dibuat untuk kebutuhan security learning dan penetration testing.
+Melakukan implementasi version control menggunakan Git dan GitHub, mulai dari membuat repository, melakukan clone, membuat branch, commit, hingga push ke remote repository.
 
 ---
 
-# 2. Objective
+# Environment
 
-Tujuan dari task ini adalah:
-
-- Deploy SonarQube menggunakan Docker
-- Create a SonarQube Project
-- Generate Authentication Token
-- Scan OWASP WebGoat Source Code
-- Analyze security findings
-- Memahami proses Static Application Security Testing (SAST)
+- Git 2.43.0
+- GitHub
+- Ubuntu 24.04 LTS
 
 ---
 
-# 3. Deployment Architecture
+# Step 1 - Install Git
 
-```text
-                +------------------------------+
-                |      Developer Machine       |
-                +--------------+---------------+
-                               |
-                               |
-                               v
-                +------------------------------+
-                |     OWASP WebGoat Source     |
-                |           Code               |
-                +--------------+---------------+
-                               |
-                               |
-                   SonarScanner (Docker)
-                               |
-                               |
-                               v
-                +------------------------------+
-                |      SonarQube Server        |
-                |      Docker Container        |
-                +--------------+---------------+
-                               |
-                               |
-                               v
-                    Security Analysis Report
-```
-
----
-
-# 4. Environment
-
-| Component | Version |
-|-----------|---------|
-| OS | Ubuntu 24.04 |
-| Docker | 27.4.1 |
-| Java | 25 |
-| Maven | 3.8.7 |
-| SonarQube | LTS Community |
-| SonarScanner | Docker Latest |
-
----
-
-# 5. Deployment Steps
-
-## 5.1 Start SonarQube Container
-
-Jalankan container SonarQube menggunakan Docker.
+Melakukan pengecekan apakah Git sudah terinstall.
 
 ```bash
-docker run -d \
-  --name sonarqube \
-  -p 9000:9000 \
-  sonarqube:lts-community
+git --version
 ```
 
-Verifikasi container:
+Output:
+
+```
+git version 2.43.0
+```
+
+---
+
+# Step 2 - Configure Git
+
+Melakukan konfigurasi username dan email.
 
 ```bash
-docker ps
+git config --global user.name "Dino Darmayanto"
+git config --global user.email "dinodarmayanto22@gmail.com"
 ```
 
-Pastikan status container **Running**.
-
----
-
-## 5.2 Access SonarQube
-
-Buka browser:
-
-```
-http://localhost:9000
-```
-
-Default credential:
-
-```
-Username : admin
-Password : admin
-```
-
-Pada login pertama, ubah password administrator.
-
----
-
-## 5.3 Create Project
-
-Buat project baru dengan konfigurasi:
-
-```
-Project Name : devsecops-assessment
-Project Key  : devsecops-assessment
-Main Branch  : master
-```
-
-Kemudian generate **User Token** yang akan digunakan oleh SonarScanner.
-
----
-
-## 5.4 Build WebGoat
-
-Sebelum melakukan scanning, project harus berhasil di-compile agar folder `target/classes` tersedia.
+Verifikasi konfigurasi.
 
 ```bash
-mvn clean compile
+git config --list
 ```
 
-Verifikasi hasil compile:
+---
+
+# Step 3 - Create GitHub Repository
+
+Membuat repository baru di GitHub dengan nama:
+
+```
+devsecops-assessment-test
+```
+
+Repository digunakan sebagai remote repository untuk seluruh task assessment.
+
+---
+
+# Step 4 - Clone Repository
+
+Melakukan clone repository dari GitHub ke local machine.
 
 ```bash
-ls target/classes
+git clone git@github.com:DinoDarmayanto/devsecops-assessment-test.git
 ```
 
----
-
-## 5.5 Run SonarScanner
-
-Karena SonarScanner CLI tidak di-install secara lokal, proses scanning dilakukan menggunakan Docker.
+Masuk ke directory project.
 
 ```bash
-docker run --rm \
-  --network host \
-  -e SONAR_HOST_URL=http://localhost:9000 \
-  -e SONAR_TOKEN=<YOUR_TOKEN> \
-  -v "$(pwd):/usr/src" \
-  sonarsource/sonar-scanner-cli \
-  -Dsonar.projectKey=devsecops-assessment \
-  -Dsonar.projectName=devsecops-assessment \
-  -Dsonar.sources=src \
-  -Dsonar.java.binaries=target/classes
+cd devsecops-assessment-test
 ```
-
-Setelah proses selesai, hasil analisis dapat dilihat melalui Dashboard SonarQube.
 
 ---
 
-# 6. Troubleshooting
+# Step 5 - Create Branch
 
-### Case 1 - HTTP 403 Forbidden
-
-Saat mencoba download SonarScanner CLI secara manual, muncul error:
-
-```
-403 Forbidden
-```
-
-**Solution**
-
-Menggunakan image Docker `sonarsource/sonar-scanner-cli` sehingga tidak perlu download binary secara manual.
-
----
-
-### Case 2 - Java Version Not Supported
-
-```
-release version 25 not supported
-```
-
-**Cause**
-
-Versi Java pada local machine masih menggunakan Java 17, sedangkan WebGoat membutuhkan Java 25.
-
-**Solution**
-
-Upgrade JDK menjadi Java 25.
-
----
-
-### Case 3 - target/classes Not Found
-
-```
-No files nor directories matching target/classes
-```
-
-**Cause**
-
-Project belum berhasil di-build.
-
-**Solution**
-
-Compile project terlebih dahulu menggunakan:
+Membuat branch sesuai requirement assessment.
 
 ```bash
-mvn clean compile
+git checkout -b development
+```
+
+Kembali ke branch utama.
+
+```bash
+git checkout master
+```
+
+Apabila branch master belum ada.
+
+```bash
+git checkout -b master
 ```
 
 ---
 
-# 7. Scan Result
+# Step 6 - Create HTML Files
 
-Setelah scanning berhasil, SonarQube menampilkan beberapa informasi seperti:
+Pada branch **development**
 
-- Bugs
-- Vulnerabilities
-- Code Smells
-- Security Hotspots
-- Security Rating
-- Reliability Rating
-- Maintainability Rating
-- Quality Gate Status
+```bash
+touch dev.html
+```
 
----
+Isi file:
 
-# 8. Screenshots
+```html
+<h1>Development Branch</h1>
+```
 
-## Dashboard
+Pada branch **master**
 
-![](screenshots/01-dashboard.png)
+```bash
+touch mas.html
+```
 
-## Project Overview
+Isi file:
 
-![](screenshots/02-project-overview.png)
-
-## Issues
-
-![](screenshots/03-issues.png)
-
-## Security Hotspots
-
-![](screenshots/04-security-hotspots.png)
-
-## Code
-
-![](screenshots/05-code.png)
-
-## Activity
-
-![](screenshots/06-activity.png)
+```html
+<h1>Master Branch</h1>
+```
 
 ---
 
-# 9. Conclusion
+# Step 7 - Git Add
 
-Pada task ini berhasil dilakukan deployment SonarQube menggunakan Docker dan proses scanning terhadap **OWASP WebGoat** menggunakan **SonarScanner Docker Image**.
+Menambahkan perubahan ke staging area.
 
-Hasil analisis menunjukkan berbagai metrik kualitas kode seperti **Bugs, Vulnerabilities, Code Smells, Security Hotspots**, serta **Quality Gate**. Dengan pendekatan ini, proses SAST dapat dilakukan secara otomatis sebagai bagian dari pipeline DevSecOps sehingga potensi security issue dapat ditemukan lebih awal sebelum aplikasi di-deploy ke production environment.
+```bash
+git add .
+```
+
+---
+
+# Step 8 - Commit
+
+Melakukan commit perubahan.
+
+```bash
+git commit -m "Add HTML file for development branch"
+```
+
+dan
+
+```bash
+git commit -m "Add HTML file for master branch"
+```
+
+---
+
+# Step 9 - Push to GitHub
+
+Push branch development.
+
+```bash
+git push origin development
+```
+
+Push branch master.
+
+```bash
+git push origin master
+```
+
+---
+
+# Step 10 - Verification
+
+Melakukan verifikasi pada GitHub bahwa:
+
+- Repository berhasil dibuat.
+- Branch `development` tersedia.
+- Branch `master` tersedia.
+- File `dev.html` terdapat pada branch `development`.
+- File `mas.html` terdapat pada branch `master`.
+
+---
+
+# Result
+
+Version control berhasil diimplementasikan menggunakan Git dan GitHub sesuai requirement assessment. Repository berhasil dikelola menggunakan beberapa branch dan seluruh perubahan berhasil di-push ke remote repository.
