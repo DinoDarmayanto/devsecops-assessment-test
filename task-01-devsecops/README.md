@@ -8,7 +8,7 @@ Tujuan utama DevSecOps adalah menghasilkan aplikasi yang **lebih cepat, lebih am
 
 ---
 
-# 2. Software Development Life Cycle (SDLC)
+## 2. Software Development Life Cycle (SDLC)
 
 **Software Development Life Cycle (SDLC)** merupakan tahapan dalam proses pengembangan perangkat lunak.
 
@@ -26,7 +26,7 @@ Pada DevSecOps, proses security tidak hanya dilakukan saat Testing, tetapi diint
 
 ---
 
-# 3. DevSecOps Lifecycle
+## 3. DevSecOps Lifecycle
 
 Secara umum workflow DevSecOps terdiri dari:
 
@@ -75,7 +75,7 @@ Pada setiap tahapan tersebut dilakukan automation dan security validation sehing
 
 ---
 
-# 4. Monolithic Architecture
+## 4. Monolithic Architecture
 
 **Monolithic Architecture** adalah arsitektur aplikasi yang seluruh komponennya berada dalam satu project dan di-deploy sebagai satu kesatuan.
 
@@ -94,7 +94,7 @@ Pada setiap tahapan tersebut dilakukan automation dan security validation sehing
 
 ---
 
-# 5. Microservices Architecture
+## 5. Microservices Architecture
 
 **Microservices** membagi aplikasi menjadi beberapa service yang berdiri sendiri.
 
@@ -122,7 +122,7 @@ Setiap service:
 
 ---
 
-# 6. Continuous Integration (CI)
+## 6. Continuous Integration (CI)
 
 **Continuous Integration (CI)** adalah proses otomatis untuk melakukan build dan testing setiap kali developer melakukan push code ke repository.
 
@@ -141,7 +141,7 @@ Benefits:
 
 ---
 
-# 7. Continuous Delivery / Continuous Deployment (CD)
+## 7. Continuous Delivery / Continuous Deployment (CD)
 
 **Continuous Delivery** memungkinkan aplikasi selalu siap untuk di-deploy setelah seluruh testing berhasil.
 
@@ -149,9 +149,9 @@ Sedangkan **Continuous Deployment** akan langsung melakukan deployment ke produc
 
 ---
 
-# 8. Security Testing
+## 8. Security Testing
 
-## SAST (Static Application Security Testing)
+### SAST (Static Application Security Testing)
 
 SAST melakukan analisis terhadap **source code** tanpa menjalankan aplikasinya.
 
@@ -167,7 +167,7 @@ Fungsi:
 
 ---
 
-## SCA (Software Composition Analysis)
+### SCA (Software Composition Analysis)
 
 SCA melakukan analisis terhadap dependency dan third-party library yang digunakan dalam project.
 
@@ -183,7 +183,7 @@ Fungsi:
 
 ---
 
-## DAST (Dynamic Application Security Testing)
+### DAST (Dynamic Application Security Testing)
 
 DAST melakukan scanning terhadap aplikasi yang sedang berjalan.
 
@@ -199,7 +199,7 @@ Fungsi:
 
 ---
 
-# 9. Benefits of DevSecOps
+## 9. Benefits of DevSecOps
 
 Implementasi DevSecOps memberikan beberapa manfaat, antara lain:
 
@@ -211,6 +211,6 @@ Implementasi DevSecOps memberikan beberapa manfaat, antara lain:
 
 ---
 
-# 10. Conclusion
+## 10. Conclusion
 
 DevSecOps merupakan kombinasi antara **Development**, **Security**, dan **Operations** yang terintegrasi dalam satu workflow. Dengan menggunakan tools seperti **Git**, **SonarQube**, **Snyk**, **Nikto**, **Docker**, dan **Kubernetes**, proses pengembangan aplikasi menjadi lebih cepat, aman, dan efisien.
